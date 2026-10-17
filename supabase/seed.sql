@@ -1,4 +1,4 @@
-insert into public.scheduling_periods (academic_year, semester, is_active) values ('2026-2027', '1st', true);
+insert into public.scheduling_periods (academic_year, semester, is_active) values ('2026-2027', '2nd', true);
  
 insert into public.programs (program_name) values ('BS Computer Science'), ('BS Information Technology');
 insert into public.year_levels (year_level) values ('1st Year'), ('2nd Year'), ('3rd Year'), ('4th Year');
