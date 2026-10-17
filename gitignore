@@ -1,0 +1,30 @@
+# Secrets (never commit the Supabase service_role / secret key)
+.env
+.env.*
+
+# Postman local metadata and environments (can hold tokens and passwords)
+.postman/
+postman/environments/
+postman/globals/
+
+# Real data and backups
+*.csv
+*.xlsx
+*.dump
+*.sql.bak
+backups/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs, temp, archives
+*.log
+*.tmp
+*.zip
+
+# Dependencies (if added later)
+node_modules/

@@ -1,0 +1,2 @@
+const SUPABASE_URL = 'https://wpbwwlbgvfebjabmyugm.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwYnd3bGJndmZlYmphYm15dWdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIxODUxODUsImV4cCI6MjEwNzc2MTE4NX0.O4ujh6LPLrivm6ckm6PF5s2akvpovDs43_9Yjcw9UhY';

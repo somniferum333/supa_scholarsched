@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScholarSched</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+ 
+  <!-- Student view (no login) -->
+  <div id="student-view" hidden>
+    <header class="topbar">
+      <div>
+        <strong>ScholarSched</strong>
+        <span id="student-period" class="muted"></span>
+      </div>
+      <button id="show-login-btn" type="button">Staff log in</button>
+    </header>
+    <main class="content">
+      <section>
+        <h2>View your class schedule</h2>
+        <div class="grid">
+          <label>Program <select id="s-program"></select></label>
+          <label>Year level <select id="s-year"></select></label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Subject</th><th>Teacher</th><th>Room</th><th>Day</th><th>Time</th></tr>
+            </thead>
+            <tbody id="student-body"></tbody>
+          </table>
+        </div>
+        <p id="student-empty" class="muted">Choose your program and year level.</p>
+      </section>
+    </main>
+  </div>
+ 
+  <!-- Staff login -->
+  <main id="login-view" class="login" hidden>
+    <h1>ScholarSched</h1>
+    <p class="muted">Staff log in</p>
+    <form id="login-form">
+      <label>Email <input type="email" id="login-email" required autocomplete="username"></label>
+      <label>Password <input type="password" id="login-password" required autocomplete="current-password"></label>
+      <button type="submit" class="primary">Log in</button>
+    </form>
+    <div id="login-error" class="alert error" role="alert" hidden></div>
+    <button type="button" id="back-to-student">Back to student schedules</button>
+  </main>
+ 
+  <!-- App -->
+  <div id="app-view" hidden>
+    <header class="topbar">
+      <div>
+        <strong>ScholarSched</strong>
+        <span id="period-label" class="muted"></span>
+      </div>
+      <div>
+        <span id="user-label" class="muted"></span>
+        <button id="logout-btn" type="button">Log out</button>
+      </div>
+    </header>
+ 
+    <main class="content">
+      <!-- Program Head only -->
+      <section id="create-panel" hidden>
+        <h2>Create schedule</h2>
+        <form id="schedule-form" class="grid">
+          <label>Subject <select id="f-subject" required></select></label>
+          <label>Program <select id="f-program" required></select></label>
+          <label>Year level <select id="f-year" required></select></label>
+          <label>Teacher <select id="f-teacher" required></select></label>
+          <label>Room <select id="f-room" required></select></label>
+          <label>Day
+            <select id="f-day" required>
+              <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+              <option>Thursday</option><option>Friday</option><option>Saturday</option>
+            </select>
+          </label>
+          <label>Start time <input type="time" id="f-start" required></label>
+          <label>End time <input type="time" id="f-end" required></label>
+          <div class="form-actions">
+            <button type="submit" class="primary">Check conflicts and save as draft</button>
+          </div>
+        </form>
+        <div id="form-alert" class="alert" role="alert" hidden></div>
+      </section>
+ 
+      <section>
+        <h2 id="list-title">Schedules</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Subject</th><th>Program and year</th><th>Teacher</th><th>Room</th>
+                <th>Day</th><th>Time</th><th>Status</th><th class="admin-only">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+        </div>
+        <p id="empty-msg" class="muted" hidden></p>
+      </section>
+    </main>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/schedules.js"></script>
+</body>
+</html>
